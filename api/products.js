@@ -28,4 +28,13 @@ export class ProductsAPI extends PrestaShopAPI {
     findOne(id, options, callback) {
         this.get(`${this.url}/${id}`, options, callback);
     }
+
+    /**
+     * Returns the product URL
+     * @param id
+     * @returns {string}
+     */
+    getProductUrl(id) {
+        return `${this.rootUrl}/index.php?controller=product&id_product=${id}`;
+    }
 }

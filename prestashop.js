@@ -2,6 +2,7 @@ import {_} from 'meteor/underscore';
 
 // Load APIs
 import {ProductsAPI} from './api/products';
+import {ProductImagesAPI} from './api/product-images';
 
 
 export class PrestaShopClient {
@@ -37,5 +38,11 @@ export class PrestaShopClient {
          * @type {ProductsAPI}
          */
         this.productsAPI = new ProductsAPI(options);
+
+        /**
+         * The product's images API
+         * @type {ProductImagesAPI}
+         */
+        this.productImagesAPI = new ProductImagesAPI(options);
     }
 }

@@ -32,6 +32,7 @@ export class PrestaShopAPI {
         this.debug = options.debug === true;
 
         // Prepare API URL
+        this.rootUrl = options.apiUrl.replace(/\/api$/g, '');
         this.url = `${options.apiUrl}/${path}`;
     }
 
@@ -73,6 +74,14 @@ export class PrestaShopAPI {
      */
     getAuthCredentials() {
         return `${this.apiKey}:`;
+    }
+
+    /**
+     * Returns the website URL
+     * @returns {string}
+     */
+    getRootUrl() {
+        return this.rootUrl;
     }
 
     /**
