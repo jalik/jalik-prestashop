@@ -30,4 +30,14 @@ export class ProductImagesAPI extends PrestaShopAPI {
     findOne(productId, imageId, options, callback) {
         this.get(`${this.url}/${productId}/${imageId}`, options, callback);
     }
+
+    /**
+     * Returns the image URL
+     * @param productId
+     * @param imageId
+     * @returns {string}
+     */
+    getImageUrl(productId, imageId) {
+        return `${this.url}/${productId}/${imageId}`;
+    }
 }
